@@ -1,4 +1,4 @@
-
+### attributes of R objects:
 #attributes()
 
 ### 6 data types: typeof() - what is the object's data type (low-level)?
