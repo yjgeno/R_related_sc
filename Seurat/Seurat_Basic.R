@@ -32,15 +32,19 @@ meta$groups == meta[['groups']] # == meta[[6]] # access cols
 groups <- pbmc[['groups', drop = TRUE]] # drop: when only one col left after subset, turn dataframe into vector
 
 
-# subset
+# subset cells
 # 1: by cluster
 pbmc_selected1 <- subset(pbmc, idents = '1')
+
 # 2: by cells (metadata)
 cells.use <- colnames(pbmc)[which(meta['groups'] == 'g1')]
 pbmc_selected2 <- subset(pbmc, cells = cells.use)
+
+# subset genes
 # 3: by genes (metadata)
 HVG <- rownames(pbmc)[which(meta.genes$vst.variable == TRUE)]
 pbmc_selected3 <- subset(pbmc, features = HVG)
+
 # 4: by gene expression
 Key(rna) # "rna_"
 rna_CD9 <- FetchData(object = pbmc, vars = 'rna_CD9') # single gene count, dataframe
