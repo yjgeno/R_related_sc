@@ -20,9 +20,9 @@ rm(Tg)
 #gc()
 
 ALL <- scQC(ALL)
-ALL <- NormalizeData(ALL)
+ALL <- NormalizeData(ALL) #account for the depth of sequencing in each cell (reads*10000 divide by total reads, and then log)
 ALL <- FindVariableFeatures(ALL)
-ALL <- ScaleData(ALL)
+ALL <- ScaleData(ALL) #scale and center genes
 ALL <- RunPCA(ALL)
 #ALL <- RunTSNE(ALL)
 ALL <- RunHarmony(ALL, group.by.vars = 'orig.ident')
