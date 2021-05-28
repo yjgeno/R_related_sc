@@ -5,4 +5,5 @@ Tutorial: <br>
 https://satijalab.org/seurat/articles/pbmc3k_tutorial.html
 
 NormalizeData and ScaleData: <br>
-https://github.com/satijalab/seurat/issues/950#issuecomment-444626498
+https://github.com/satijalab/seurat/issues/950#issuecomment-444626498 <br>
+https://towardsdatascience.com/understand-data-normalization-in-machine-learning-8ff3062101f0
