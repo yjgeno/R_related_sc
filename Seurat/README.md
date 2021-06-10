@@ -13,11 +13,17 @@ Standarization: <br>
 
 FindVariableFeatures:<br>
 selection.method = 'vst'<br>
+nfeatures = 2000 only used when selection.method is set to 'dispersion' or 'vst' <br>
 https://github.com/satijalab/seurat/issues/1410 <br>
 <img src="https://user-images.githubusercontent.com/77600778/121581966-149d7a00-c9f4-11eb-918a-bda02186c318.png" width="500" height="350">\
 selection.method = 'mean.var.plot'<br>
+Features are binned by their mean expression, and genes with high standarized dispersions are selected as HVGs in each bin. <br>
+y.cutoff = 2: features that are more than two SD away from the average dispersion within a bin. <br>
+The default X-axis is the mean expression level, and for Y-axis it is the log(Variance/mean). <br>
+All mean/variance calculations are not performed in log-space, but the results are reported in log-space - see relevant functions for exact details.<br>
 <img src="https://user-images.githubusercontent.com/77600778/121582022-22eb9600-c9f4-11eb-926d-79e4ad44e07a.png" width="500" height="350">\
 selection.method = 'dispersion'<br>
+Select the genes with the highest dispersion <br>
 <img src="https://user-images.githubusercontent.com/77600778/121582036-2717b380-c9f4-11eb-9ac6-1e452a84d7e2.png" width="500" height="350">
 
 
