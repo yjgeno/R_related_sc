@@ -13,6 +13,8 @@ Standarization: <br>
 
 FindVariableFeatures:<br>
 selection.method = 'vst'<br>
+Polynomial fit a curve to predict the log(variance) of each gene as a function of its log(mean). <br>
+Then standardizes the feature values using the observed mean and expected variance (given by the fitted line). Feature variance is then calculated on the standardized values after clipping to a maximum (see clip.max parameter). <br>
 nfeatures = 2000 only used when selection.method is set to 'dispersion' or 'vst' <br>
 https://github.com/satijalab/seurat/issues/1410 <br>
 <img src="https://user-images.githubusercontent.com/77600778/121581966-149d7a00-c9f4-11eb-918a-bda02186c318.png" width="500" height="350">\
