@@ -13,6 +13,7 @@ Standarization: <br>
 
 FindVariableFeatures:<br>
 selection.method = 'vst'<br>
+https://github.com/satijalab/seurat/issues/1410 <br>
 <img src="https://user-images.githubusercontent.com/77600778/121581966-149d7a00-c9f4-11eb-918a-bda02186c318.png" width="500" height="350">\
 selection.method = 'mean.var.plot'<br>
 <img src="https://user-images.githubusercontent.com/77600778/121582022-22eb9600-c9f4-11eb-926d-79e4ad44e07a.png" width="500" height="350">\
