@@ -11,9 +11,8 @@ def get_Mean_Var(X):
     return mean, var
   
   
-def get_Dispersions(X, plot = False):
-    #X = ada.X #log space X
-    X = np.expm1(X)
+def get_Dispersions(X, log = True, plot = False): #X = ada.X, log space X
+    X = np.expm1(X) #to original counts
     mean, var = get_Mean_Var(X)
 
     mean[mean == 0] = 1e-12  
@@ -21,18 +20,30 @@ def get_Dispersions(X, plot = False):
     dispersion[dispersion == 0] = np.nan #for log   
     CV = dispersion / np.sqrt(var)
     
+    if log:
+        mean = np.log2(mean)
+        CV= np.log2(CV)
+        dispersion= np.log2(dispersion)
+         
     if plot:
-        plt.scatter(np.log2(mean), np.log2(CV), marker='o', s=3)
-        plt.xlabel('log2 mean')
-        plt.ylabel('log2 CV')
-        #plt.scatter(np.log2(mean), np.log2(var), marker='o')
+        plt.figure(figsize=(12,6))
+        plt.subplot(1, 2, 1)
+        plt.scatter(mean, CV, marker='o', s=3)
+        plt.xlabel('(log) mean')
+        plt.ylabel('(log) CV')
+        
+        plt.subplot(1, 2, 2)
+        plt.scatter(mean, dispersion, marker='o', s=3)
+        plt.xlabel('(log) mean')
+        plt.ylabel('(log) dispersion')
         plt.show()
     
-    return dispersion, CV #np.log(dispersion)
+    return dispersion, CV 
   
   
 #test
-#get_Dispersions(ada.X)[:5]
+#dispersion, CV = get_Dispersions(ada.X, log = True, plot=True) 
+
   
   
   
