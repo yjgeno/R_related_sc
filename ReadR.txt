@@ -7,3 +7,6 @@ read.delim2(): for reading “tab-separated value” files (“.txt”). By defa
 examples:
 read.csv(file, header = TRUE, sep = ",", dec = ".", ...)
 read.delim(file, header = TRUE, sep = "\t", dec = ".", ...)
+
+
+
