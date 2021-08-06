@@ -3,4 +3,4 @@
 library(SeuratData)
 #AvailableData()
 InstallData("pbmc3k")
-pbmc <- pbmc3k
+pbmc3k
