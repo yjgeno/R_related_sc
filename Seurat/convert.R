@@ -3,6 +3,8 @@ library(SeuratDisk)
 
 setwd('./data')
 
+#h5ad data downloaded from https://www.heartcellatlas.org/
+
 #h5ad to seurat
 Convert("hca_heart_immune_raw.h5ad", dest = "h5seurat", overwrite = TRUE)
 seuratObj <- LoadH5Seurat("hca_heart_immune_raw.h5seurat")
