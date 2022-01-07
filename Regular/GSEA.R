@@ -10,8 +10,8 @@ data(examplePathways)
 data(exampleRanks)
 
 set.seed(42)
-fgseaRes <- fgsea(pathways = examplePathways, 
-                  stats    = exampleRanks,
+fgseaRes <- fgsea(pathways = examplePathways, # List of gene sets to check
+                  stats    = exampleRanks, # Named vector of gene-level stats. Names should be the same as in 'pathways'
                   eps = 0.0
                   minSize  = 15,
                   maxSize  = 500)
