@@ -33,7 +33,7 @@ gene_list <- sort(gene_list, decreasing = TRUE)
 U <- gene_list
 U <- U[!grepl('RPL|RPS|RP[[:digit:]]+|MT-', names(U))]
 #U <- U[!grepl('GM|RIK', names(U))]
-eD <- fgseaMultilevel(BIOP, U, scoreType = 'pos')
+eD <- fgseaMultilevel(BIOP, U, scoreType = 'pos') # scoreType: https://github.com/ctlab/fgsea/issues/27
 eD$leadingEdge <- unlist(lapply(eD$leadingEdge, function(X){paste0(X,collapse = ';')}))
 eD <- eD[eD$padj < 0.05,,drop=FALSE]
 # write.csv(eD, file = paste0('GSEA_BIOP.csv')) 
